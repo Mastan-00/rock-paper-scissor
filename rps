@@ -1,0 +1,58 @@
+import random
+
+Input = ['rock','paper','scissors']
+Yes = ['yes','y']
+No = ['no','n']
+
+playAgain = True
+while playAgain == True:
+  randm = random.randint(0,2)
+  compMove = Input[randm]
+  #print(compMove)
+  ask = input("You're playing rock,paper,scissors! please type in your move. \n\n").lower()
+  while ask not in Input:
+    ask = input('Please enter Rock, Paper or Scissors:\n').lower()
+
+
+  if ask == "rock" and compMove == "rock":
+    print("The computer played",compMove)
+    print('Tie')
+  elif ask == "rock" and compMove == "paper":
+    print(compMove)
+    print ("Haha! I win!")
+  elif ask == "rock" and compMove == "scissors":
+    print(compMove)
+    print ("Aww man. You won.")
+  elif ask == "paper" and compMove == 'paper' :
+    print(compMove)
+    print('its a tie')
+  elif ask == "paper" and compMove == "scissors":
+    print(compMove)
+    print ("Haha! I win!")
+  elif ask == "paper"  and compMove == "rock":
+    print(compMove)
+    print ("Aww man. You won.")
+  elif ask == "scissors" and compMove == 'scissors':
+    print(compMove)
+    print('its a tie')
+  elif ask == "scissors"  and compMove == "rock":
+    print(compMove)
+    print ("Haha! I win!")
+  elif ask == "scissors"  and compMove == 'paper':
+    print (compMove)
+    print ("Aww man. You won.")
+  # else:
+  #   print ("You have to choose rock, paper, or scissors!")
+#37, 38, 43, 44roc
+      
+  newGame = input ("\nwould you like to play again? Type Yes if you'd like to play again or No if you want to stop playing.\n").lower()
+  while newGame not in Yes and newGame not in No:
+    newGame = input('Please enter yes or no.\n').lower()
+
+  if newGame in Yes:
+    print('great!\n')
+ 
+  elif newGame in No:
+    print ('Alright, I hope you had fun playing! play again!')
+    playAgain = False
+
